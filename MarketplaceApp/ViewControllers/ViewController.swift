@@ -10,40 +10,84 @@ import SnapKit
 
 class ViewController: UIViewController {
     
-    private let tableView = UITableView()
+    private var collectionView: UICollectionView!
+    
+    private var products = [Product]()
 
     override func viewDidLoad() {
         FirebaseManager.shared.fetchProducts { products in
             if products != nil {
-                print(products![0].name)
+                self.products = products ?? []
+                self.collectionView.reloadData()
+                print(products?.count)
             }
         }
         super.viewDidLoad()
-        view.backgroundColor = .blue
         setupNavigationBar()
+        setupCollectionView()
+        setupConstraints()
     }
 
     private func setupNavigationBar() {
         
     }
     
-    private func setupTableView() {
-        tableView.delegate = self
-        tableView.dataSource = self
+    private func setupCollectionView() {
+        
+        let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .vertical
+        collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        collectionView.backgroundColor = .white
+        collectionView.delegate = self
+        collectionView.dataSource = self
+        collectionView.register(ProductCell.self, forCellWithReuseIdentifier: "cell")
+        view.addSubview(collectionView)
+    }
+    
+    private func setupConstraints() {
+        
+        collectionView.snp.makeConstraints { make in
+            make.top.equalToSuperview()
+            make.leading.equalToSuperview()
+            make.trailing.equalToSuperview()
+            make.bottom.equalToSuperview()
+        }
     }
     
 }
 
-extension ViewController: UITableViewDelegate, UITableViewDataSource {
+extension ViewController: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource, UICollectionViewDelegate   {
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        10
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        products.count
     }
     
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        UITableViewCell()
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! ProductCell
+        cell.product = products[indexPath.row]
+        cell.setup()
+        
+        return cell
     }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let size = (collectionView.frame.width / 2)
+        return CGSize(width: size, height: size * 1.2 )
+    }
+    
+   
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 10
+    }
+
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return 0
+    }
+    
+    
+    
+    
     
     
 }

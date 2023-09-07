@@ -23,7 +23,7 @@ class FirebaseManager {
         db.collection("products").getDocuments { snapshot, error in
             if snapshot != nil {
                 for document in snapshot!.documents {
-                    let product = Product(imageURL: document["imageURL"] as! String, name: document["name"] as! String)
+                    let product = Product(imageName: document["imageName"] as! String, name: document["name"] as! String)
                     products.append(product)
                     completion(products)
                 }
@@ -31,9 +31,7 @@ class FirebaseManager {
             } else {
                 completion(nil)
             }
-            
-            
-            
+
         }
     }
 }

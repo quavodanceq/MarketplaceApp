@@ -9,7 +9,7 @@ import Foundation
 
 struct Product {
     
-    let imageURL: String
+    let imageName: String
     
     let name: String
     

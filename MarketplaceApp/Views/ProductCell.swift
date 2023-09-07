@@ -1,16 +1,17 @@
 //
-//  Cell.swift
+//  ProductCell.swift
 //  MarketplaceApp
 //
-//  Created by Куат Оралбеков on 07.09.2023.
+//  Created by Куат Оралбеков on 08.09.2023.
 //
 
+import Foundation
 import UIKit
+import FirebaseStorage
 import SnapKit
 import SDWebImage
-import FirebaseStorage
 
-class Cell: UITableViewCell {
+class ProductCell: UICollectionViewCell {
     
     var product: Product?
     
@@ -18,22 +19,16 @@ class Cell: UITableViewCell {
     
     private let label = UILabel()
     
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+    }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-        super.init(style: style, reuseIdentifier: reuseIdentifier)
-    }
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        setup()
-    }
-    
     func setup() {
-        backgroundColor = .red
+        layer.borderColor = UIColor.black.cgColor
         setupImageView()
         setupLabel()
         setupConstraints()
@@ -41,6 +36,10 @@ class Cell: UITableViewCell {
     
     private func setupImageView() {
         addSubview(image)
+        image.layer.cornerRadius = 20
+        image.layer.cornerCurve = .continuous
+        image.clipsToBounds = true
+        
         let imageRef = Storage.storage().reference().child(product?.imageName ?? "")
         imageRef.downloadURL { result in
             switch result {
@@ -55,33 +54,34 @@ class Cell: UITableViewCell {
     }
     
     private func setupLabel() {
+        
         addSubview(label)
         label.text = product?.name
+        label.font = UIFont(name: "Georgia-Bold", size: 17)
+        label.textColor = .black
+        label.numberOfLines = 0
+        label.textAlignment = .center
+        label.layer.cornerRadius = 10
+        label.layer.masksToBounds = true
+        label.backgroundColor = .white
     }
     
     private func setupConstraints() {
         
         image.snp.makeConstraints { make in
             make.top.equalToSuperview()
-            make.leading.equalToSuperview().offset(10)
-            make.trailing.equalToSuperview().offset(-10)
-            
+            make.bottom.equalToSuperview()
+            make.centerX.equalToSuperview()
+            make.width.equalToSuperview().multipliedBy(0.8)
+            make.height.equalToSuperview().multipliedBy(0.8)
         }
         
         label.snp.makeConstraints { make in
+            
+            make.centerX.equalToSuperview()
             make.top.equalTo(image.snp.bottom)
-            make.leading.equalToSuperview().offset(10)
-            make.trailing.equalToSuperview().offset(-10)
+            make.width.equalTo(image.snp.width)
         }
     }
     
-    
-    
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
-
 }
