@@ -15,13 +15,14 @@
 		64FE92142AAA03D600C94587 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 64FE92132AAA03D600C94587 /* SnapKit */; };
 		64FE921A2AAA058D00C94587 /* Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64FE92192AAA058D00C94587 /* Cell.swift */; };
 		64FE921C2AAA069E00C94587 /* ProductModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64FE921B2AAA069E00C94587 /* ProductModel.swift */; };
-		64FE921E2AAA07A600C94587 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 64FE921D2AAA07A600C94587 /* GoogleService-Info.plist */; };
 		64FE92212AAA080300C94587 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 64FE92202AAA080300C94587 /* FirebaseAuth */; };
 		64FE92232AAA080300C94587 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 64FE92222AAA080300C94587 /* FirebaseDatabase */; };
 		64FE92252AAA080300C94587 /* FirebaseDatabaseSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 64FE92242AAA080300C94587 /* FirebaseDatabaseSwift */; };
 		64FE92272AAA080300C94587 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 64FE92262AAA080300C94587 /* FirebaseFirestore */; };
 		64FE92292AAA080300C94587 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 64FE92282AAA080300C94587 /* FirebaseFirestoreSwift */; };
 		64FE922B2AAA080300C94587 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 64FE922A2AAA080300C94587 /* FirebaseStorage */; };
+		64FE92362AAA183D00C94587 /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64FE92352AAA183D00C94587 /* FirebaseManager.swift */; };
+		64FE923C2AAA4D8E00C94587 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 64FE923B2AAA4D8E00C94587 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,7 +35,8 @@
 		64FE920C2AAA02DA00C94587 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		64FE92192AAA058D00C94587 /* Cell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cell.swift; sourceTree = "<group>"; };
 		64FE921B2AAA069E00C94587 /* ProductModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductModel.swift; sourceTree = "<group>"; };
-		64FE921D2AAA07A600C94587 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		64FE92352AAA183D00C94587 /* FirebaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
+		64FE923B2AAA4D8E00C94587 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,13 +77,14 @@
 			isa = PBXGroup;
 			children = (
 				64FE92152AAA04BA00C94587 /* Application */,
+				64FE92342AAA182000C94587 /* Networking */,
 				64FE92162AAA055300C94587 /* ViewControllers */,
 				64FE92172AAA055F00C94587 /* Views */,
 				64FE92182AAA056800C94587 /* Models */,
 				64FE92072AAA02DA00C94587 /* Assets.xcassets */,
 				64FE92092AAA02DA00C94587 /* LaunchScreen.storyboard */,
 				64FE920C2AAA02DA00C94587 /* Info.plist */,
-				64FE921D2AAA07A600C94587 /* GoogleService-Info.plist */,
+				64FE923B2AAA4D8E00C94587 /* GoogleService-Info.plist */,
 			);
 			path = MarketplaceApp;
 			sourceTree = "<group>";
@@ -117,6 +120,14 @@
 				64FE921B2AAA069E00C94587 /* ProductModel.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		64FE92342AAA182000C94587 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				64FE92352AAA183D00C94587 /* FirebaseManager.swift */,
+			);
+			path = Networking;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -190,9 +201,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				64FE923C2AAA4D8E00C94587 /* GoogleService-Info.plist in Resources */,
 				64FE920B2AAA02DA00C94587 /* LaunchScreen.storyboard in Resources */,
 				64FE92082AAA02DA00C94587 /* Assets.xcassets in Resources */,
-				64FE921E2AAA07A600C94587 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -203,6 +214,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				64FE92362AAA183D00C94587 /* FirebaseManager.swift in Sources */,
 				64FE92032AAA02D900C94587 /* ViewController.swift in Sources */,
 				64FE921A2AAA058D00C94587 /* Cell.swift in Sources */,
 				64FE91FF2AAA02D900C94587 /* AppDelegate.swift in Sources */,

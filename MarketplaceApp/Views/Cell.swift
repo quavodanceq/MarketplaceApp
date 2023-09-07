@@ -17,7 +17,9 @@ class Cell: UITableViewCell {
     private let label = UILabel()
     
     init(product: Product) {
+        
         self.product = product
+        super.init()
     }
     
     required init?(coder: NSCoder) {

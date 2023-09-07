@@ -13,7 +13,13 @@ class ViewController: UIViewController {
     private let tableView = UITableView()
 
     override func viewDidLoad() {
+        FirebaseManager.shared.fetchProducts { products in
+            if products != nil {
+                print(products![0].name)
+            }
+        }
         super.viewDidLoad()
+        view.backgroundColor = .blue
         setupNavigationBar()
     }
 
@@ -36,7 +42,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        <#code#>
+        UITableViewCell()
     }
     
     
