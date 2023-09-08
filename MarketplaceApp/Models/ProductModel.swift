@@ -13,4 +13,14 @@ struct Product {
     
     let name: String
     
+    let price: String
+    
+}
+
+extension Product: Codable {
+    
+}
+
+extension Product: Equatable {
+    
 }

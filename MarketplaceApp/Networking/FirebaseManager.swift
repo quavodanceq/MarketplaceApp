@@ -7,7 +7,6 @@
 
 import Foundation
 import FirebaseFirestore
-import FirebaseFirestoreSwift
 
 class FirebaseManager {
     
@@ -23,7 +22,7 @@ class FirebaseManager {
         db.collection("products").getDocuments { snapshot, error in
             if snapshot != nil {
                 for document in snapshot!.documents {
-                    let product = Product(imageName: document["imageName"] as! String, name: document["name"] as! String)
+                    let product = Product(imageName: document["imageName"] as! String, name: document["name"] as! String, price: document["price"] as! String)
                     products.append(product)
                     completion(products)
                 }

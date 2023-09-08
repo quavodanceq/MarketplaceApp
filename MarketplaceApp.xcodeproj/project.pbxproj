@@ -9,11 +9,10 @@
 /* Begin PBXBuildFile section */
 		64FE91FF2AAA02D900C94587 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64FE91FE2AAA02D900C94587 /* AppDelegate.swift */; };
 		64FE92012AAA02D900C94587 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64FE92002AAA02D900C94587 /* SceneDelegate.swift */; };
-		64FE92032AAA02D900C94587 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64FE92022AAA02D900C94587 /* ViewController.swift */; };
+		64FE92032AAA02D900C94587 /* ProductsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64FE92022AAA02D900C94587 /* ProductsViewController.swift */; };
 		64FE92082AAA02DA00C94587 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 64FE92072AAA02DA00C94587 /* Assets.xcassets */; };
 		64FE920B2AAA02DA00C94587 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 64FE92092AAA02DA00C94587 /* LaunchScreen.storyboard */; };
 		64FE92142AAA03D600C94587 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 64FE92132AAA03D600C94587 /* SnapKit */; };
-		64FE921A2AAA058D00C94587 /* Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64FE92192AAA058D00C94587 /* Cell.swift */; };
 		64FE921C2AAA069E00C94587 /* ProductModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64FE921B2AAA069E00C94587 /* ProductModel.swift */; };
 		64FE92212AAA080300C94587 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 64FE92202AAA080300C94587 /* FirebaseAuth */; };
 		64FE92232AAA080300C94587 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 64FE92222AAA080300C94587 /* FirebaseDatabase */; };
@@ -22,26 +21,37 @@
 		64FE92292AAA080300C94587 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 64FE92282AAA080300C94587 /* FirebaseFirestoreSwift */; };
 		64FE922B2AAA080300C94587 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 64FE922A2AAA080300C94587 /* FirebaseStorage */; };
 		64FE92362AAA183D00C94587 /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64FE92352AAA183D00C94587 /* FirebaseManager.swift */; };
-		64FE923C2AAA4D8E00C94587 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 64FE923B2AAA4D8E00C94587 /* GoogleService-Info.plist */; };
 		64FE923F2AAA525600C94587 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 64FE923E2AAA525600C94587 /* SDWebImage */; };
 		64FE92422AAA59AF00C94587 /* ProductCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64FE92412AAA59AF00C94587 /* ProductCell.swift */; };
 		64FE92452AAA6C5B00C94587 /* UIColor + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64FE92442AAA6C5B00C94587 /* UIColor + Extension.swift */; };
+		64FE92482AAAD16E00C94587 /* CartPublisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64FE92472AAAD16E00C94587 /* CartPublisher.swift */; };
+		64FE924B2AAAD20700C94587 /* CartManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64FE924A2AAAD20700C94587 /* CartManager.swift */; };
+		64FE924D2AAAD3C900C94587 /* CartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64FE924C2AAAD3C900C94587 /* CartViewController.swift */; };
+		64FE924F2AAAD40B00C94587 /* CartCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64FE924E2AAAD40B00C94587 /* CartCell.swift */; };
+		64FE92512AAAD5E100C94587 /* MainTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64FE92502AAAD5E100C94587 /* MainTabBarViewController.swift */; };
+		64FE92532AAADB5700C94587 /* EmptyCartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64FE92522AAADB5700C94587 /* EmptyCartView.swift */; };
+		64FE92572AAAE84A00C94587 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 64FE92562AAAE84A00C94587 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		64FE91FB2AAA02D900C94587 /* MarketplaceApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MarketplaceApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		64FE91FE2AAA02D900C94587 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		64FE92002AAA02D900C94587 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		64FE92022AAA02D900C94587 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		64FE92022AAA02D900C94587 /* ProductsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsViewController.swift; sourceTree = "<group>"; };
 		64FE92072AAA02DA00C94587 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		64FE920A2AAA02DA00C94587 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		64FE920C2AAA02DA00C94587 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		64FE92192AAA058D00C94587 /* Cell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cell.swift; sourceTree = "<group>"; };
 		64FE921B2AAA069E00C94587 /* ProductModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductModel.swift; sourceTree = "<group>"; };
 		64FE92352AAA183D00C94587 /* FirebaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
-		64FE923B2AAA4D8E00C94587 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		64FE92412AAA59AF00C94587 /* ProductCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCell.swift; sourceTree = "<group>"; };
 		64FE92442AAA6C5B00C94587 /* UIColor + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor + Extension.swift"; sourceTree = "<group>"; };
+		64FE92472AAAD16E00C94587 /* CartPublisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartPublisher.swift; sourceTree = "<group>"; };
+		64FE924A2AAAD20700C94587 /* CartManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartManager.swift; sourceTree = "<group>"; };
+		64FE924C2AAAD3C900C94587 /* CartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewController.swift; sourceTree = "<group>"; };
+		64FE924E2AAAD40B00C94587 /* CartCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartCell.swift; sourceTree = "<group>"; };
+		64FE92502AAAD5E100C94587 /* MainTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarViewController.swift; sourceTree = "<group>"; };
+		64FE92522AAADB5700C94587 /* EmptyCartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyCartView.swift; sourceTree = "<group>"; };
+		64FE92562AAAE84A00C94587 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +93,7 @@
 			isa = PBXGroup;
 			children = (
 				64FE92152AAA04BA00C94587 /* Application */,
+				64FE92492AAAD1F100C94587 /* Managers */,
 				64FE92342AAA182000C94587 /* Networking */,
 				64FE92162AAA055300C94587 /* ViewControllers */,
 				64FE92172AAA055F00C94587 /* Views */,
@@ -91,7 +102,7 @@
 				64FE92072AAA02DA00C94587 /* Assets.xcassets */,
 				64FE92092AAA02DA00C94587 /* LaunchScreen.storyboard */,
 				64FE920C2AAA02DA00C94587 /* Info.plist */,
-				64FE923B2AAA4D8E00C94587 /* GoogleService-Info.plist */,
+				64FE92562AAAE84A00C94587 /* GoogleService-Info.plist */,
 			);
 			path = MarketplaceApp;
 			sourceTree = "<group>";
@@ -108,7 +119,9 @@
 		64FE92162AAA055300C94587 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				64FE92022AAA02D900C94587 /* ViewController.swift */,
+				64FE92022AAA02D900C94587 /* ProductsViewController.swift */,
+				64FE92502AAAD5E100C94587 /* MainTabBarViewController.swift */,
+				64FE924C2AAAD3C900C94587 /* CartViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -116,8 +129,9 @@
 		64FE92172AAA055F00C94587 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				64FE92192AAA058D00C94587 /* Cell.swift */,
 				64FE92412AAA59AF00C94587 /* ProductCell.swift */,
+				64FE924E2AAAD40B00C94587 /* CartCell.swift */,
+				64FE92522AAADB5700C94587 /* EmptyCartView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -142,8 +156,17 @@
 			isa = PBXGroup;
 			children = (
 				64FE92442AAA6C5B00C94587 /* UIColor + Extension.swift */,
+				64FE92472AAAD16E00C94587 /* CartPublisher.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		64FE92492AAAD1F100C94587 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				64FE924A2AAAD20700C94587 /* CartManager.swift */,
+			);
+			path = Managers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -219,7 +242,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				64FE923C2AAA4D8E00C94587 /* GoogleService-Info.plist in Resources */,
+				64FE92572AAAE84A00C94587 /* GoogleService-Info.plist in Resources */,
 				64FE920B2AAA02DA00C94587 /* LaunchScreen.storyboard in Resources */,
 				64FE92082AAA02DA00C94587 /* Assets.xcassets in Resources */,
 			);
@@ -234,10 +257,15 @@
 			files = (
 				64FE92362AAA183D00C94587 /* FirebaseManager.swift in Sources */,
 				64FE92452AAA6C5B00C94587 /* UIColor + Extension.swift in Sources */,
-				64FE92032AAA02D900C94587 /* ViewController.swift in Sources */,
-				64FE921A2AAA058D00C94587 /* Cell.swift in Sources */,
+				64FE92032AAA02D900C94587 /* ProductsViewController.swift in Sources */,
 				64FE91FF2AAA02D900C94587 /* AppDelegate.swift in Sources */,
+				64FE924B2AAAD20700C94587 /* CartManager.swift in Sources */,
+				64FE92482AAAD16E00C94587 /* CartPublisher.swift in Sources */,
+				64FE924F2AAAD40B00C94587 /* CartCell.swift in Sources */,
+				64FE92532AAADB5700C94587 /* EmptyCartView.swift in Sources */,
+				64FE924D2AAAD3C900C94587 /* CartViewController.swift in Sources */,
 				64FE92012AAA02D900C94587 /* SceneDelegate.swift in Sources */,
+				64FE92512AAAD5E100C94587 /* MainTabBarViewController.swift in Sources */,
 				64FE92422AAA59AF00C94587 /* ProductCell.swift in Sources */,
 				64FE921C2AAA069E00C94587 /* ProductModel.swift in Sources */,
 			);

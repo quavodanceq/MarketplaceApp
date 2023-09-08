@@ -1,0 +1,103 @@
+//
+//  CartViewController.swift
+//  MarketplaceApp
+//
+//  Created by Куат Оралбеков on 08.09.2023.
+//
+
+import Foundation
+import UIKit
+import Combine
+import SnapKit
+
+class CartViewController: UIViewController {
+    
+    private var cart = [Product]()
+    
+    private let tableView = UITableView()
+    
+    private let emptyCartView = EmptyCartView()
+    
+    private var cancellable = [AnyCancellable]()
+    
+    override func viewDidLoad() {
+        view.backgroundColor = .white
+        setupPublisher()
+        setupEmptyCartView()
+        setupTableView()
+        setupConstraints()
+    }
+    
+    private func setupPublisher() {
+        
+        UserDefaults.standard.publisher(for: \.observableProductsData)
+            .map{ data -> [Product] in
+                guard let data = data else { return [] }
+                return (try? JSONDecoder().decode([Product].self, from: data)) ?? []
+            }.sink { products in
+                
+                self.cart = products
+                if self.cart.isEmpty {
+                    self.tabBarItem.badgeValue = nil
+                    self.emptyCartView.reveal()
+                    self.emptyCartView.isHidden = false
+                    self.tableView.isHidden = true
+                    
+                } else {
+                    self.tabBarItem.badgeValue = String(self.cart.count)
+                    self.emptyCartView.isHidden = true
+                    
+        
+                    
+                }
+            }.store(in: &cancellable)
+    }
+    
+    private func setupTableView() {
+        view.addSubview(tableView)
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.register(CartCell.self, forCellReuseIdentifier: "cell")
+    }
+    
+    private func setupEmptyCartView() {
+        
+        view.addSubview(emptyCartView)
+    }
+    
+    private func setupConstraints() {
+        
+        tableView.snp.makeConstraints { make in
+            make.top.equalToSuperview()
+            make.trailing.equalToSuperview()
+            make.leading.equalToSuperview()
+            make.bottom.equalToSuperview()
+        }
+        
+        emptyCartView.snp.makeConstraints { make in
+            make.centerX.equalToSuperview()
+            make.centerY.equalToSuperview()
+            make.width.equalToSuperview().multipliedBy(0.8)
+            make.height.equalTo(emptyCartView.snp.width)
+        }
+    }
+    
+}
+
+extension CartViewController: UITableViewDelegate, UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        cart.count
+    }
+    
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as! CartCell
+        cell.product = cart[indexPath.row]
+        cell.setup()
+        return cell
+    }
+    
+    
+    
+}
