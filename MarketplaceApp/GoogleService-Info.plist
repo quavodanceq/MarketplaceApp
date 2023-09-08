@@ -1,16 +1,1 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-<plist version="1.0">
-<dict>
-	<key>CLIENT_ID</key>
-	<string>297566343877-sqoqlohqq13r8difptojrv166633urt9.apps.googleusercontent.com</string>
-	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.297566343877-sqoqlohqq13r8difptojrv166633urt9</string>
-	<key>API_KEY</key>
-	<string>AIzaSyCCINqn-382fmdgs9V4nIAZMUNl8_A2AvM</string>
-	<key>GCM_SENDER_ID</key>
-	<string>297566343877</string>
 
-	<string>1:297566343877:ios:0b9f5077e0713798c1d6ac</string>
-</dict>
-</plist>
