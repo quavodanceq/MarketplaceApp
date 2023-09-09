@@ -31,6 +31,11 @@
 		64FE92512AAAD5E100C94587 /* MainTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64FE92502AAAD5E100C94587 /* MainTabBarViewController.swift */; };
 		64FE92532AAADB5700C94587 /* EmptyCartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64FE92522AAADB5700C94587 /* EmptyCartView.swift */; };
 		64FE92572AAAE84A00C94587 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 64FE92562AAAE84A00C94587 /* GoogleService-Info.plist */; };
+		64FE92592AAB272900C94587 /* ProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64FE92582AAB272900C94587 /* ProductViewController.swift */; };
+		64FE925B2AAB285500C94587 /* CarouselCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64FE925A2AAB285500C94587 /* CarouselCell.swift */; };
+		64FE925E2AAB3BB900C94587 /* CarouselView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64FE925D2AAB3BB900C94587 /* CarouselView.swift */; };
+		64FE92662AABD7D100C94587 /* SizesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64FE92652AABD7D100C94587 /* SizesView.swift */; };
+		64FE92682AAC7C7200C94587 /* OrderModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64FE92672AAC7C7200C94587 /* OrderModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +57,11 @@
 		64FE92502AAAD5E100C94587 /* MainTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarViewController.swift; sourceTree = "<group>"; };
 		64FE92522AAADB5700C94587 /* EmptyCartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyCartView.swift; sourceTree = "<group>"; };
 		64FE92562AAAE84A00C94587 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		64FE92582AAB272900C94587 /* ProductViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductViewController.swift; sourceTree = "<group>"; };
+		64FE925A2AAB285500C94587 /* CarouselCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselCell.swift; sourceTree = "<group>"; };
+		64FE925D2AAB3BB900C94587 /* CarouselView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselView.swift; sourceTree = "<group>"; };
+		64FE92652AABD7D100C94587 /* SizesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SizesView.swift; sourceTree = "<group>"; };
+		64FE92672AAC7C7200C94587 /* OrderModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +132,7 @@
 				64FE92022AAA02D900C94587 /* ProductsViewController.swift */,
 				64FE92502AAAD5E100C94587 /* MainTabBarViewController.swift */,
 				64FE924C2AAAD3C900C94587 /* CartViewController.swift */,
+				64FE92582AAB272900C94587 /* ProductViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -132,6 +143,9 @@
 				64FE92412AAA59AF00C94587 /* ProductCell.swift */,
 				64FE924E2AAAD40B00C94587 /* CartCell.swift */,
 				64FE92522AAADB5700C94587 /* EmptyCartView.swift */,
+				64FE925A2AAB285500C94587 /* CarouselCell.swift */,
+				64FE925D2AAB3BB900C94587 /* CarouselView.swift */,
+				64FE92652AABD7D100C94587 /* SizesView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -140,6 +154,7 @@
 			isa = PBXGroup;
 			children = (
 				64FE921B2AAA069E00C94587 /* ProductModel.swift */,
+				64FE92672AAC7C7200C94587 /* OrderModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -261,10 +276,15 @@
 				64FE91FF2AAA02D900C94587 /* AppDelegate.swift in Sources */,
 				64FE924B2AAAD20700C94587 /* CartManager.swift in Sources */,
 				64FE92482AAAD16E00C94587 /* CartPublisher.swift in Sources */,
+				64FE925E2AAB3BB900C94587 /* CarouselView.swift in Sources */,
 				64FE924F2AAAD40B00C94587 /* CartCell.swift in Sources */,
 				64FE92532AAADB5700C94587 /* EmptyCartView.swift in Sources */,
 				64FE924D2AAAD3C900C94587 /* CartViewController.swift in Sources */,
+				64FE92682AAC7C7200C94587 /* OrderModel.swift in Sources */,
+				64FE92662AABD7D100C94587 /* SizesView.swift in Sources */,
 				64FE92012AAA02D900C94587 /* SceneDelegate.swift in Sources */,
+				64FE925B2AAB285500C94587 /* CarouselCell.swift in Sources */,
+				64FE92592AAB272900C94587 /* ProductViewController.swift in Sources */,
 				64FE92512AAAD5E100C94587 /* MainTabBarViewController.swift in Sources */,
 				64FE92422AAA59AF00C94587 /* ProductCell.swift in Sources */,
 				64FE921C2AAA069E00C94587 /* ProductModel.swift in Sources */,

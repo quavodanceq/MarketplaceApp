@@ -28,6 +28,13 @@ class CartViewController: UIViewController {
         setupConstraints()
     }
     
+    override func viewWillLayoutSubviews() {
+        
+        tableView.snp.makeConstraints { make in
+            make.height.equalTo(tableView.contentSize.height)
+        }
+    }
+    
     private func setupPublisher() {
         
         UserDefaults.standard.publisher(for: \.observableProductsData)
@@ -37,6 +44,7 @@ class CartViewController: UIViewController {
             }.sink { products in
                 
                 self.cart = products
+                self.tableView.reloadData()
                 if self.cart.isEmpty {
                     self.tabBarItem.badgeValue = nil
                     self.emptyCartView.reveal()
@@ -46,11 +54,15 @@ class CartViewController: UIViewController {
                 } else {
                     self.tabBarItem.badgeValue = String(self.cart.count)
                     self.emptyCartView.isHidden = true
-                    
+                    self.tableView.isHidden = false
         
                     
                 }
+                
+                print(self.cart.count)
             }.store(in: &cancellable)
+        
+        
     }
     
     private func setupTableView() {
@@ -98,6 +110,15 @@ extension CartViewController: UITableViewDelegate, UITableViewDataSource {
         return cell
     }
     
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        
+        return 100
+    }
     
+   
+        
+        
+        
+    }
     
-}
+

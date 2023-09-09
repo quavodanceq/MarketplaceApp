@@ -8,6 +8,7 @@
 import Foundation
 import UIKit
 import FirebaseStorage
+import SnapKit
 
 class CartCell: UITableViewCell {
     
@@ -18,6 +19,8 @@ class CartCell: UITableViewCell {
     private let nameLabel = UILabel()
     
     private let priceLabel = UILabel()
+    
+    private let removeButton = UIButton()
     
     
     required init?(coder: NSCoder) {
@@ -34,15 +37,17 @@ class CartCell: UITableViewCell {
     }
     
     func setup() {
-        backgroundColor = .red
+        setupNameLabel()
         setupImageView()
         setupPriceLabel()
         setupPriceLabel()
+        setupRemoveButton()
         setupConstraints()
     }
     
     private func setupImageView() {
         addSubview(image)
+        image.clipsToBounds = true
         let imageRef = Storage.storage().reference().child(product?.imageName ?? "")
         imageRef.downloadURL { result in
             switch result {
@@ -67,7 +72,7 @@ class CartCell: UITableViewCell {
     private func setupPriceLabel() {
         addSubview(priceLabel)
         let price = product?.price
-        let priceString = "\(price)$"
+        let priceString = "\(price ?? "")$"
         priceLabel.text = priceString
         priceLabel.font = UIFont(name: "Georgia-Bold", size: 17)
         priceLabel.textColor = .black
@@ -75,12 +80,26 @@ class CartCell: UITableViewCell {
         
     }
     
+    private func setupRemoveButton() {
+        contentView.addSubview(removeButton)
+        
+        removeButton.setImage(UIImage(systemName: "xmark"), for: .normal)
+        removeButton.addTarget(self, action: #selector(removeButtonTapped), for: .touchUpInside)
+        
+    }
+    
+    @objc private func removeButtonTapped() {
+        CartManager.shared.removeFromCart(product!)
+        
+    }
+    
     private func setupConstraints() {
         
         image.snp.makeConstraints { make in
-            make.top.equalToSuperview().offset(10)
             make.leading.equalToSuperview().offset(10)
-            make.bottom.equalToSuperview().offset(-10)
+            make.height.equalToSuperview().multipliedBy(0.9)
+            make.width.equalTo(image.snp.height).multipliedBy(0.8)
+            make.centerY.equalToSuperview()
             
         }
         
@@ -94,6 +113,14 @@ class CartCell: UITableViewCell {
             make.bottom.equalToSuperview().offset(-10)
             make.leading.equalTo(image.snp.trailing).offset(10)
         }
+        removeButton.snp.makeConstraints { make in
+            make.centerY.equalToSuperview()
+            make.trailing.equalToSuperview().offset(-10)
+        }
     }
     
+    
+    
 }
+
+

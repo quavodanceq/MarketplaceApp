@@ -15,6 +15,12 @@ struct Product {
     
     let price: String
     
+    let imagesNames: [String]
+    
+    let sizes: [String]
+    
+    var size: String?
+    
 }
 
 extension Product: Codable {

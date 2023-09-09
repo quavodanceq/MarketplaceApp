@@ -88,6 +88,12 @@ extension ProductsViewController: UICollectionViewDelegateFlowLayout, UICollecti
         return 0
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        let productViewController = ProductViewController(product: products[indexPath.row])
+        self.navigationController?.pushViewController(productViewController, animated: true)
+    }
+    
     
     
     
