@@ -20,13 +20,17 @@ class MainTabBarViewController: UITabBarController {
         navigationItem.hidesBackButton = true
         let productImage = UIImage(systemName: "suitcase")
         let cartImage = UIImage(systemName: "cart")
+        let profileImage = UIImage(systemName: "person.crop.circle")
         let productsVC = UINavigationController(rootViewController: ProductsViewController())
         let cartVC = CartViewController()
+        let profileVC = ProfileViewController()
         productsVC.tabBarItem.title = "Products"
         cartVC.tabBarItem.title = "Cart"
+        profileVC.tabBarItem.title = "Profile"
         productsVC.tabBarItem.image = productImage
         cartVC.tabBarItem.image = cartImage
-        setViewControllers([productsVC, cartVC], animated: false)
+        profileVC.tabBarItem.image = profileImage
+        setViewControllers([productsVC, cartVC, profileVC], animated: false)
     }
     
     private func setupAppearance() {
