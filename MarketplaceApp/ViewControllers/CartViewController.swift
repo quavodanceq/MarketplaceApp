@@ -18,6 +18,8 @@ class CartViewController: UIViewController {
     
     private let emptyCartView = EmptyCartView()
     
+    private let makeOrderButton = UIButton()
+    
     private var cancellable = [AnyCancellable]()
     
     override func viewDidLoad() {
@@ -25,6 +27,7 @@ class CartViewController: UIViewController {
         setupPublisher()
         setupEmptyCartView()
         setupTableView()
+        setupMakeOrderButton()
         setupConstraints()
     }
     
@@ -77,6 +80,20 @@ class CartViewController: UIViewController {
         view.addSubview(emptyCartView)
     }
     
+    private func setupMakeOrderButton() {
+        
+        view.addSubview(makeOrderButton)
+        makeOrderButton.setTitle("Make order", for: .normal)
+        makeOrderButton.backgroundColor = .backgroundColor
+        makeOrderButton.setTitleColor(.white, for: .normal)
+        makeOrderButton.addTarget(self, action: #selector(makeOrderButtonTapped), for: .touchUpInside)
+    }
+    
+    @objc private func makeOrderButtonTapped() {
+        
+        FirebaseManager.shared.addOrderToFirebase(cart: cart)
+    }
+    
     private func setupConstraints() {
         
         tableView.snp.makeConstraints { make in
@@ -91,6 +108,12 @@ class CartViewController: UIViewController {
             make.centerY.equalToSuperview()
             make.width.equalToSuperview().multipliedBy(0.8)
             make.height.equalTo(emptyCartView.snp.width)
+        }
+        
+        makeOrderButton.snp.makeConstraints { make in
+            make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom).offset(-10)
+            make.centerX.equalToSuperview()
+            make.width.equalToSuperview().multipliedBy(0.5)
         }
     }
     
@@ -112,12 +135,8 @@ extension CartViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
-        return 100
+        return view.frame.height / 7
     }
-    
-   
-        
-        
         
     }
     

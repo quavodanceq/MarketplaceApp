@@ -9,7 +9,23 @@ import Foundation
 
 struct OrderModel {
     
-    let order: [Product]
+    var order: [OrderProduct]
     
+    let address: Adress
 }
 
+struct OrderProduct {
+    
+    let name: String
+    
+    let size: String
+}
+
+struct Adress {
+    
+    let city: String
+    
+    let street: String
+    
+    let homeNumber: String
+}

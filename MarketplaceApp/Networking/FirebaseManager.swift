@@ -33,4 +33,34 @@ class FirebaseManager {
 
         }
     }
+    
+    
+    func addOrderToFirebase(cart: [Product]) {
+        
+        var order = OrderModel(order: [OrderProduct](), address: Adress(city: "Astana", street: "Koshkarbaev", homeNumber: "40"))
+        
+        for product in cart {
+            let orderProduct = OrderProduct(name: product.name, size: product.size ?? "XS")
+            order.order.append(orderProduct)
+        }
+        var orderData = [String : String]()
+        for i in 0..<order.order.count {
+            orderData["\(i)"] = "\(order.order[i].name) \(order.order[i].size)"
+        }
+        orderData["city"] = order.address.city
+        orderData["street"] = order.address.street
+        orderData["homeNumber"] = order.address.homeNumber
+        db.collection("orders").addDocument(data: orderData) { error in
+            if error != nil {
+                print(error?.localizedDescription)
+            }
+        }
+        
+        
+        
+    
+        
+        
+    }
+    
 }

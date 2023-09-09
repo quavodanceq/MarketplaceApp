@@ -25,7 +25,7 @@ class ProductViewController: UIViewController{
     
     private let cartButton = UIButton()
     
-    private let product: Product
+    private var product: Product
     
     private var productSize: String?
     
@@ -167,6 +167,7 @@ class ProductViewController: UIViewController{
     
     @objc private func cartButtonTapped() {
         if productSize != nil {
+            product.size = productSize
             CartManager.shared.addToCart(product)
         } else {
             self.present(alert, animated: true)
