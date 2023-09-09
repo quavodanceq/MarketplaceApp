@@ -34,7 +34,6 @@ class FirebaseManager {
         }
     }
     
-    
     func addOrderToFirebase(cart: [Product]) {
         
         var order = OrderModel(order: [OrderProduct](), address: Adress(city: "Astana", street: "Koshkarbaev", homeNumber: "40"))
@@ -55,12 +54,7 @@ class FirebaseManager {
                 print(error?.localizedDescription)
             }
         }
-        
-        
-        
-    
-        
-        
     }
+    
     
 }

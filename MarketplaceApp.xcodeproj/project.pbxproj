@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		649AA29A2AACF56100E543F0 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 649AA2992AACF56100E543F0 /* ProfileViewController.swift */; };
+		649AA29C2AACF58200E543F0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 649AA29B2AACF58200E543F0 /* GoogleService-Info.plist */; };
 		64FE91FF2AAA02D900C94587 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64FE91FE2AAA02D900C94587 /* AppDelegate.swift */; };
 		64FE92012AAA02D900C94587 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64FE92002AAA02D900C94587 /* SceneDelegate.swift */; };
 		64FE92032AAA02D900C94587 /* ProductsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64FE92022AAA02D900C94587 /* ProductsViewController.swift */; };
@@ -30,7 +32,6 @@
 		64FE924F2AAAD40B00C94587 /* CartCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64FE924E2AAAD40B00C94587 /* CartCell.swift */; };
 		64FE92512AAAD5E100C94587 /* MainTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64FE92502AAAD5E100C94587 /* MainTabBarViewController.swift */; };
 		64FE92532AAADB5700C94587 /* EmptyCartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64FE92522AAADB5700C94587 /* EmptyCartView.swift */; };
-		64FE92572AAAE84A00C94587 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 64FE92562AAAE84A00C94587 /* GoogleService-Info.plist */; };
 		64FE92592AAB272900C94587 /* ProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64FE92582AAB272900C94587 /* ProductViewController.swift */; };
 		64FE925B2AAB285500C94587 /* CarouselCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64FE925A2AAB285500C94587 /* CarouselCell.swift */; };
 		64FE925E2AAB3BB900C94587 /* CarouselView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64FE925D2AAB3BB900C94587 /* CarouselView.swift */; };
@@ -39,6 +40,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		649AA2992AACF56100E543F0 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		649AA29B2AACF58200E543F0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		64FE91FB2AAA02D900C94587 /* MarketplaceApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MarketplaceApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		64FE91FE2AAA02D900C94587 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		64FE92002AAA02D900C94587 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -56,7 +59,6 @@
 		64FE924E2AAAD40B00C94587 /* CartCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartCell.swift; sourceTree = "<group>"; };
 		64FE92502AAAD5E100C94587 /* MainTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarViewController.swift; sourceTree = "<group>"; };
 		64FE92522AAADB5700C94587 /* EmptyCartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyCartView.swift; sourceTree = "<group>"; };
-		64FE92562AAAE84A00C94587 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		64FE92582AAB272900C94587 /* ProductViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductViewController.swift; sourceTree = "<group>"; };
 		64FE925A2AAB285500C94587 /* CarouselCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselCell.swift; sourceTree = "<group>"; };
 		64FE925D2AAB3BB900C94587 /* CarouselView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselView.swift; sourceTree = "<group>"; };
@@ -112,7 +114,7 @@
 				64FE92072AAA02DA00C94587 /* Assets.xcassets */,
 				64FE92092AAA02DA00C94587 /* LaunchScreen.storyboard */,
 				64FE920C2AAA02DA00C94587 /* Info.plist */,
-				64FE92562AAAE84A00C94587 /* GoogleService-Info.plist */,
+				649AA29B2AACF58200E543F0 /* GoogleService-Info.plist */,
 			);
 			path = MarketplaceApp;
 			sourceTree = "<group>";
@@ -133,6 +135,7 @@
 				64FE92502AAAD5E100C94587 /* MainTabBarViewController.swift */,
 				64FE924C2AAAD3C900C94587 /* CartViewController.swift */,
 				64FE92582AAB272900C94587 /* ProductViewController.swift */,
+				649AA2992AACF56100E543F0 /* ProfileViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -257,7 +260,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				64FE92572AAAE84A00C94587 /* GoogleService-Info.plist in Resources */,
+				649AA29C2AACF58200E543F0 /* GoogleService-Info.plist in Resources */,
 				64FE920B2AAA02DA00C94587 /* LaunchScreen.storyboard in Resources */,
 				64FE92082AAA02DA00C94587 /* Assets.xcassets in Resources */,
 			);
@@ -279,6 +282,7 @@
 				64FE925E2AAB3BB900C94587 /* CarouselView.swift in Sources */,
 				64FE924F2AAAD40B00C94587 /* CartCell.swift in Sources */,
 				64FE92532AAADB5700C94587 /* EmptyCartView.swift in Sources */,
+				649AA29A2AACF56100E543F0 /* ProfileViewController.swift in Sources */,
 				64FE924D2AAAD3C900C94587 /* CartViewController.swift in Sources */,
 				64FE92682AAC7C7200C94587 /* OrderModel.swift in Sources */,
 				64FE92662AABD7D100C94587 /* SizesView.swift in Sources */,
