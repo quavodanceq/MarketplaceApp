@@ -21,6 +21,8 @@
 		649AA2B22AACFC1900E543F0 /* LoginResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 649AA2B12AACFC1900E543F0 /* LoginResult.swift */; };
 		649AA2B42AADD6E500E543F0 /* UserInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 649AA2B32AADD6E500E543F0 /* UserInfoViewController.swift */; };
 		649AA2B72AADDBBC00E543F0 /* iOSDropDown in Frameworks */ = {isa = PBXBuildFile; productRef = 649AA2B62AADDBBC00E543F0 /* iOSDropDown */; };
+		649AA2B92AAE038800E543F0 /* OrdersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 649AA2B82AAE038700E543F0 /* OrdersViewController.swift */; };
+		649AA2BB2AAE040100E543F0 /* OrderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 649AA2BA2AAE040100E543F0 /* OrderCell.swift */; };
 		64FE91FF2AAA02D900C94587 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64FE91FE2AAA02D900C94587 /* AppDelegate.swift */; };
 		64FE92012AAA02D900C94587 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64FE92002AAA02D900C94587 /* SceneDelegate.swift */; };
 		64FE92032AAA02D900C94587 /* ProductsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64FE92022AAA02D900C94587 /* ProductsViewController.swift */; };
@@ -51,6 +53,8 @@
 		649AA2AF2AACFB8200E543F0 /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
 		649AA2B12AACFC1900E543F0 /* LoginResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResult.swift; sourceTree = "<group>"; };
 		649AA2B32AADD6E500E543F0 /* UserInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoViewController.swift; sourceTree = "<group>"; };
+		649AA2B82AAE038700E543F0 /* OrdersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdersViewController.swift; sourceTree = "<group>"; };
+		649AA2BA2AAE040100E543F0 /* OrderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderCell.swift; sourceTree = "<group>"; };
 		64FE91FB2AAA02D900C94587 /* MarketplaceApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MarketplaceApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		64FE91FE2AAA02D900C94587 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		64FE92002AAA02D900C94587 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -149,6 +153,7 @@
 				64FE92582AAB272900C94587 /* ProductViewController.swift */,
 				649AA2992AACF56100E543F0 /* ProfileViewController.swift */,
 				649AA2B32AADD6E500E543F0 /* UserInfoViewController.swift */,
+				649AA2B82AAE038700E543F0 /* OrdersViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -162,6 +167,7 @@
 				64FE925A2AAB285500C94587 /* CarouselCell.swift */,
 				64FE925D2AAB3BB900C94587 /* CarouselView.swift */,
 				64FE92652AABD7D100C94587 /* SizesView.swift */,
+				649AA2BA2AAE040100E543F0 /* OrderCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -300,6 +306,7 @@
 				64FE924B2AAAD20700C94587 /* CartManager.swift in Sources */,
 				649AA2B42AADD6E500E543F0 /* UserInfoViewController.swift in Sources */,
 				64FE92482AAAD16E00C94587 /* CartPublisher.swift in Sources */,
+				649AA2B92AAE038800E543F0 /* OrdersViewController.swift in Sources */,
 				64FE925E2AAB3BB900C94587 /* CarouselView.swift in Sources */,
 				64FE924F2AAAD40B00C94587 /* CartCell.swift in Sources */,
 				64FE92532AAADB5700C94587 /* EmptyCartView.swift in Sources */,
@@ -314,6 +321,7 @@
 				64FE92592AAB272900C94587 /* ProductViewController.swift in Sources */,
 				64FE92512AAAD5E100C94587 /* MainTabBarViewController.swift in Sources */,
 				64FE92422AAA59AF00C94587 /* ProductCell.swift in Sources */,
+				649AA2BB2AAE040100E543F0 /* OrderCell.swift in Sources */,
 				64FE921C2AAA069E00C94587 /* ProductModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

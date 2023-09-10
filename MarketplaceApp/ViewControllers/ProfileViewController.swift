@@ -14,28 +14,41 @@ import SnapKit
 
 class ProfileViewController: UIViewController {
     
-    private let nameLabel = UILabel()
-    
     private let loginButton = GIDSignInButton()
     
     private let infoButton = UIButton()
+    
+    private let ordersButton = UIButton()
     
     override func viewDidLoad() {
         view.backgroundColor = .white
         setupLoginButton()
         setupInfoButton()
+        setupOrdersButton()
         setupConstaints()
     }
     
-    private func setupNameLabel() {
-        
-        
-    }
+
     
     private func setupLoginButton() {
         
         loginButton.addTarget(self, action: #selector(loginButtonTapped), for: .touchUpInside)
         view.addSubview(loginButton)
+    }
+    
+    private func setupOrdersButton() {
+        
+        view.addSubview(ordersButton)
+        ordersButton.setTitle("My orders", for: .normal)
+        ordersButton.backgroundColor = .white
+        ordersButton.setTitleColor(.backgroundColor, for: .normal)
+        ordersButton.layer.borderColor = UIColor.backgroundColor.cgColor
+        ordersButton.layer.borderWidth = 2
+        ordersButton.layer.shadowColor = UIColor.black.cgColor
+        ordersButton.layer.shadowRadius = 1
+        ordersButton.layer.shadowOffset = CGSize(width: 1, height: 1)
+        ordersButton.layer.shadowOpacity = 0.5
+        ordersButton.addTarget(self, action: #selector(ordersButtonTapped), for: .touchUpInside)
     }
     
     private func setupInfoButton() {
@@ -67,20 +80,31 @@ class ProfileViewController: UIViewController {
             make.centerX.equalToSuperview()
             make.width.equalToSuperview().multipliedBy(0.5)
         }
+        
+        ordersButton.snp.makeConstraints { make in
+            make.top.equalTo(infoButton.snp.bottom).offset(10)
+            make.centerX.equalToSuperview()
+            make.width.equalToSuperview().multipliedBy(0.5)
+        }
+        
+        
     }
     
     @objc private func loginButtonTapped() {
         
         AuthManager.shared.login(viewController: self) { result in
             switch result {
-                
-                
             case .success:
                 print("success")
             case .failure:
                 print("failure")
             }
         }
+    }
+    
+    @objc private func ordersButtonTapped() {
+        
+        self.navigationController?.pushViewController(OrdersViewController(), animated: true)
     }
     
     @objc private func infoButtonTapped() {

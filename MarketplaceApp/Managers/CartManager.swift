@@ -32,4 +32,14 @@ class CartManager {
         
         userDefaults.products = [Product]()
     }
+    
+    func checkUserInfo() -> Bool{
+        
+        let userDefaults = UserDefaults.standard
+        guard let name = userDefaults.object(forKey: "name") else { return false}
+        guard let city = userDefaults.object(forKey: "city") else { return false}
+        guard let street = userDefaults.object(forKey: "street") else { return false}
+        guard let homeNumber = userDefaults.object(forKey: "homeNumber") else { return false}
+        return true
+    }
 }

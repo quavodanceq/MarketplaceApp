@@ -7,6 +7,8 @@
 
 import Foundation
 import FirebaseFirestore
+import FirebaseAuth
+import Firebase
 
 class FirebaseManager {
     
@@ -35,13 +37,20 @@ class FirebaseManager {
     }
     
     func addOrderToFirebase(cart: [Product]) {
+        let userDefaults = UserDefaults.standard
+        let name = userDefaults.object(forKey: "name") as! String
+        let city = userDefaults.object(forKey: "city") as! String
+        let street = userDefaults.object(forKey: "street") as! String
+        let homeNumber = userDefaults.object(forKey: "homeNumber") as! String
         
-        var order = OrderModel(order: [OrderProduct](), address: Adress(city: "Astana", street: "Koshkarbaev", homeNumber: "40"))
-        
+        var order = OrderModel(order: [OrderProduct](), address: Adress(city: city, street: street, homeNumber: homeNumber, name: name))
+        var orderString = ""
         for product in cart {
             let orderProduct = OrderProduct(name: product.name, size: product.size ?? "XS")
             order.order.append(orderProduct)
+            orderString.append("\(orderProduct.name) \(orderProduct.size), ")
         }
+        let orderStringToPush = orderString.dropLast(2)
         var orderData = [String : String]()
         for i in 0..<order.order.count {
             orderData["\(i)"] = "\(order.order[i].name) \(order.order[i].size)"
@@ -49,12 +58,37 @@ class FirebaseManager {
         orderData["city"] = order.address.city
         orderData["street"] = order.address.street
         orderData["homeNumber"] = order.address.homeNumber
+        orderData["name"] = order.address.name
+        let date = Date()
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "YY/MM/dd"
+        dateFormatter.string(from: date)
+        orderData["date"] = dateFormatter.string(from: date)
         db.collection("orders").addDocument(data: orderData) { error in
             if error != nil {
                 print(error?.localizedDescription)
             }
         }
+        db.collection("users").document(Auth.auth().currentUser!.uid).collection("orders").addDocument(data: ["order" : orderStringToPush, "date" : dateFormatter.string(from: date), "deliveryStatus" : "Created"])
     }
+    
+    func fetchOrders(completion: @escaping ([FetchedOrder]?) -> Void) {
+        db.collection("users").document(Auth.auth().currentUser!.uid).collection("orders").getDocuments(source: .server) { snapshot, err in
+            
+            var orders = [FetchedOrder]()
+            if snapshot != nil {
+                var orders = [FetchedOrder]()
+                for document in snapshot!.documents {
+                    let order = FetchedOrder(order: document["order"] as! String, date: document["date"] as! String, deliveryStatus: document["deliveryStatus"] as! String)
+                    orders.append(order)
+                }
+                completion(orders)
+                
+            } else {
+                completion(nil)
+            }
+        }
+            }
     
     
 }

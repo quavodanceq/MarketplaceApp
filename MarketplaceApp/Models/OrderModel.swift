@@ -28,4 +28,16 @@ struct Adress {
     let street: String
     
     let homeNumber: String
+    
+    let name: String
+}
+
+struct FetchedOrder {
+    
+    let order: String
+    
+    let date: String
+    
+    let deliveryStatus: String
+
 }

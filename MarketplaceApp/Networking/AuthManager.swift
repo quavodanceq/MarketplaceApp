@@ -54,4 +54,12 @@ class AuthManager {
         }
     }
     
+    func isUsedLoggedIn() -> Bool {
+        
+        if Auth.auth().currentUser != nil {
+            return true
+        } else {
+            return false
+        }
+    }
 }

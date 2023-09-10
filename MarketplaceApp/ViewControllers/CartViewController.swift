@@ -91,6 +91,25 @@ class CartViewController: UIViewController {
     
     @objc private func makeOrderButtonTapped() {
         
+        let alertController = UIAlertController()
+    
+        guard CartManager.shared.checkUserInfo() else {
+            alertController.title = "Something went wrong"
+            alertController.message = "Provide all information to make order"
+            let action = UIAlertAction(title: "Ok", style: .default)
+            alertController.addAction(action)
+            self.present(alertController, animated: true)
+            return }
+        
+        guard AuthManager.shared.isUsedLoggedIn() else {
+            alertController.title = "Something went wrong"
+            alertController.message = "You need to log in to make order"
+            let action = UIAlertAction(title: "Ok", style: .default)
+            alertController.addAction(action)
+            self.present(alertController, animated: true)
+            return
+        }
+        
         FirebaseManager.shared.addOrderToFirebase(cart: cart)
     }
     
