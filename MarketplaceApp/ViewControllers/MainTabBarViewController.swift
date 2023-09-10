@@ -23,7 +23,7 @@ class MainTabBarViewController: UITabBarController {
         let profileImage = UIImage(systemName: "person.crop.circle")
         let productsVC = UINavigationController(rootViewController: ProductsViewController())
         let cartVC = CartViewController()
-        let profileVC = ProfileViewController()
+        let profileVC = UINavigationController(rootViewController: ProfileViewController())
         productsVC.tabBarItem.title = "Products"
         cartVC.tabBarItem.title = "Cart"
         profileVC.tabBarItem.title = "Profile"

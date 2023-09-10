@@ -19,6 +19,8 @@
 		649AA2AE2AACF88100E543F0 /* GoogleSignInSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 649AA2AD2AACF88100E543F0 /* GoogleSignInSwift */; };
 		649AA2B02AACFB8200E543F0 /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 649AA2AF2AACFB8200E543F0 /* AuthManager.swift */; };
 		649AA2B22AACFC1900E543F0 /* LoginResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 649AA2B12AACFC1900E543F0 /* LoginResult.swift */; };
+		649AA2B42AADD6E500E543F0 /* UserInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 649AA2B32AADD6E500E543F0 /* UserInfoViewController.swift */; };
+		649AA2B72AADDBBC00E543F0 /* iOSDropDown in Frameworks */ = {isa = PBXBuildFile; productRef = 649AA2B62AADDBBC00E543F0 /* iOSDropDown */; };
 		64FE91FF2AAA02D900C94587 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64FE91FE2AAA02D900C94587 /* AppDelegate.swift */; };
 		64FE92012AAA02D900C94587 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64FE92002AAA02D900C94587 /* SceneDelegate.swift */; };
 		64FE92032AAA02D900C94587 /* ProductsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64FE92022AAA02D900C94587 /* ProductsViewController.swift */; };
@@ -48,6 +50,7 @@
 		649AA29B2AACF58200E543F0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		649AA2AF2AACFB8200E543F0 /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
 		649AA2B12AACFC1900E543F0 /* LoginResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResult.swift; sourceTree = "<group>"; };
+		649AA2B32AADD6E500E543F0 /* UserInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoViewController.swift; sourceTree = "<group>"; };
 		64FE91FB2AAA02D900C94587 /* MarketplaceApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MarketplaceApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		64FE91FE2AAA02D900C94587 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		64FE92002AAA02D900C94587 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -81,6 +84,7 @@
 				64FE923F2AAA525600C94587 /* SDWebImage in Frameworks */,
 				649AA29F2AACF84200E543F0 /* FirebaseAuth in Frameworks */,
 				649AA2A72AACF84200E543F0 /* FirebaseFirestoreSwift in Frameworks */,
+				649AA2B72AADDBBC00E543F0 /* iOSDropDown in Frameworks */,
 				649AA2A12AACF84200E543F0 /* FirebaseDatabase in Frameworks */,
 				649AA2AE2AACF88100E543F0 /* GoogleSignInSwift in Frameworks */,
 				649AA2A92AACF84200E543F0 /* FirebaseStorage in Frameworks */,
@@ -144,6 +148,7 @@
 				64FE924C2AAAD3C900C94587 /* CartViewController.swift */,
 				64FE92582AAB272900C94587 /* ProductViewController.swift */,
 				649AA2992AACF56100E543F0 /* ProfileViewController.swift */,
+				649AA2B32AADD6E500E543F0 /* UserInfoViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -224,6 +229,7 @@
 				649AA2A82AACF84200E543F0 /* FirebaseStorage */,
 				649AA2AB2AACF88100E543F0 /* GoogleSignIn */,
 				649AA2AD2AACF88100E543F0 /* GoogleSignInSwift */,
+				649AA2B62AADDBBC00E543F0 /* iOSDropDown */,
 			);
 			productName = MarketplaceApp;
 			productReference = 64FE91FB2AAA02D900C94587 /* MarketplaceApp.app */;
@@ -258,6 +264,7 @@
 				64FE923D2AAA525600C94587 /* XCRemoteSwiftPackageReference "SDWebImage" */,
 				649AA29D2AACF84200E543F0 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				649AA2AA2AACF88100E543F0 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */,
+				649AA2B52AADDBBC00E543F0 /* XCRemoteSwiftPackageReference "iOSDropDown" */,
 			);
 			productRefGroup = 64FE91FC2AAA02D900C94587 /* Products */;
 			projectDirPath = "";
@@ -291,6 +298,7 @@
 				64FE92032AAA02D900C94587 /* ProductsViewController.swift in Sources */,
 				64FE91FF2AAA02D900C94587 /* AppDelegate.swift in Sources */,
 				64FE924B2AAAD20700C94587 /* CartManager.swift in Sources */,
+				649AA2B42AADD6E500E543F0 /* UserInfoViewController.swift in Sources */,
 				64FE92482AAAD16E00C94587 /* CartPublisher.swift in Sources */,
 				64FE925E2AAB3BB900C94587 /* CarouselView.swift in Sources */,
 				64FE924F2AAAD40B00C94587 /* CartCell.swift in Sources */,
@@ -532,6 +540,14 @@
 				minimumVersion = 7.0.0;
 			};
 		};
+		649AA2B52AADDBBC00E543F0 /* XCRemoteSwiftPackageReference "iOSDropDown" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/jriosdev/iOSDropDown.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.4.0;
+			};
+		};
 		64FE92122AAA03D600C94587 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
@@ -590,6 +606,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 649AA2AA2AACF88100E543F0 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */;
 			productName = GoogleSignInSwift;
+		};
+		649AA2B62AADDBBC00E543F0 /* iOSDropDown */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 649AA2B52AADDBBC00E543F0 /* XCRemoteSwiftPackageReference "iOSDropDown" */;
+			productName = iOSDropDown;
 		};
 		64FE92132AAA03D600C94587 /* SnapKit */ = {
 			isa = XCSwiftPackageProductDependency;
