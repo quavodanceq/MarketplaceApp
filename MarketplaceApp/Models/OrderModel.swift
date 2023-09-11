@@ -30,6 +30,8 @@ struct Adress {
     let homeNumber: String
     
     let name: String
+    
+    let phoneNumber: String
 }
 
 struct FetchedOrder {

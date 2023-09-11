@@ -16,6 +16,10 @@ class UserInfoViewController: UIViewController {
     
     private let nameTextField = UITextField()
     
+    private let phoneNumberLabel = UILabel()
+    
+    private let phoneNumberTextField = UITextField()
+    
     private let cityLabel = UILabel()
     
     let  dropDown = DropDown()
@@ -34,6 +38,8 @@ class UserInfoViewController: UIViewController {
         setupNavigationBar()
         setupNameLabel()
         setupNameTextField()
+        setupPhoneNumberLabel()
+        setupPhoneNumberTextField()
         setupCityLabel()
         setupDropDown()
         setupStreetLabel()
@@ -63,18 +69,15 @@ class UserInfoViewController: UIViewController {
     }
     
     @objc private func save() {
-        if nameTextField.text != "" && cityLabel.text != "" && streetTextField.text != "" && homeNumberTextField.text != "" {
+        
+        if nameTextField.text != "" && cityLabel.text != "" && streetTextField.text != "" && homeNumberTextField.text != "" && phoneNumberTextField.text != "" {
             let userDefaults = UserDefaults.standard
             userDefaults.set(nameTextField.text, forKey: "name")
             userDefaults.set(cityLabel.text, forKey: "city")
             userDefaults.set(streetTextField.text, forKey: "street")
             userDefaults.set(homeNumberTextField.text, forKey: "homeNumber")
-        
-            print(userDefaults.object(forKey: "city"))
-            print(userDefaults.object(forKey: "street"))
-            print(userDefaults.object(forKey: "city"))
-            print(userDefaults.object(forKey: "homeNumber"))
-        
+            userDefaults.set(phoneNumberTextField.text, forKey: "phone")
+            self.navigationController?.popViewController(animated: true)
         } else {
             
             let alertController = UIAlertController(title: "Ooops!", message: "Fill al fields", preferredStyle: .alert)
@@ -95,6 +98,24 @@ class UserInfoViewController: UIViewController {
         nameLabel.font = UIFont(name: "Georgia-Bold", size: 22)
     }
     
+    private func setupPhoneNumberLabel() {
+        
+        view.addSubview(phoneNumberLabel)
+        phoneNumberLabel.text = "Enter your number"
+        phoneNumberLabel.font = UIFont(name: "Georgia-Bold", size: 22)
+    }
+    
+    private func setupPhoneNumberTextField() {
+        
+        view.addSubview(phoneNumberTextField)
+        phoneNumberTextField.keyboardType = .numberPad
+        let userDefaults = UserDefaults.standard
+        if let number = userDefaults.object(forKey: "phone") {
+            phoneNumberTextField.text = number as! String
+        }
+        phoneNumberTextField.font = UIFont(name: "Georgia-Bold", size: 20)
+    }
+    
     private func setupNameTextField() {
         
         let userDefaults = UserDefaults.standard
@@ -110,7 +131,7 @@ class UserInfoViewController: UIViewController {
         view.addSubview(cityLabel)
         let userDefaults = UserDefaults.standard
         if let city = userDefaults.object(forKey: "city") {
-            nameTextField.text = city as! String
+            cityLabel.text = city as! String
         } else {
             cityLabel.text = "Choose your city"
         }
@@ -162,7 +183,7 @@ class UserInfoViewController: UIViewController {
         
         view.addSubview(homeNumberTextField)
         let userDefaults = UserDefaults.standard
-        if let street = userDefaults.object(forKey: "street") {
+        if let street = userDefaults.object(forKey: "homeNumber") {
             homeNumberTextField.text = street as! String
         }
 
@@ -171,19 +192,33 @@ class UserInfoViewController: UIViewController {
     
     private func setupConstraints() {
         
+        
+        
         nameLabel.snp.makeConstraints { make in
             make.top.equalTo(view.safeAreaLayoutGuide.snp.top)
             make.leading.equalToSuperview().offset(10)
         }
-        
+
         nameTextField.snp.makeConstraints { make in
             make.top.equalTo(nameLabel.snp.bottom).offset(10)
             make.leading.equalToSuperview().offset(10)
             make.width.equalToSuperview()
         }
         
+        phoneNumberLabel.snp.makeConstraints { make in
+            make.top.equalTo(nameTextField.snp.bottom).offset(10)
+            make.leading.equalToSuperview().offset(10)
+            make.width.equalToSuperview()
+        }
+        
+        phoneNumberTextField.snp.makeConstraints { make in
+            make.top.equalTo(phoneNumberLabel.snp.bottom).offset(10)
+            make.leading.equalToSuperview().offset(10)
+            make.width.equalToSuperview()
+        }
+        
         cityLabel.snp.makeConstraints { make in
-            make.top.equalTo(nameTextField.snp.bottom).offset(15)
+            make.top.equalTo(phoneNumberTextField.snp.bottom).offset(15)
             make.leading.equalToSuperview().offset(10)
         }
         

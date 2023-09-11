@@ -42,8 +42,9 @@ class FirebaseManager {
         let city = userDefaults.object(forKey: "city") as! String
         let street = userDefaults.object(forKey: "street") as! String
         let homeNumber = userDefaults.object(forKey: "homeNumber") as! String
+        let phoneNumber = userDefaults.object(forKey: "phone") as! String
         
-        var order = OrderModel(order: [OrderProduct](), address: Adress(city: city, street: street, homeNumber: homeNumber, name: name))
+        var order = OrderModel(order: [OrderProduct](), address: Adress(city: city, street: street, homeNumber: homeNumber, name: name, phoneNumber: phoneNumber))
         var orderString = ""
         for product in cart {
             let orderProduct = OrderProduct(name: product.name, size: product.size ?? "XS")
@@ -59,6 +60,7 @@ class FirebaseManager {
         orderData["street"] = order.address.street
         orderData["homeNumber"] = order.address.homeNumber
         orderData["name"] = order.address.name
+        orderData["phoneNumber"] = order.address.phoneNumber
         let date = Date()
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "YY/MM/dd"

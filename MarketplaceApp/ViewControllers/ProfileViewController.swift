@@ -106,15 +106,16 @@ class ProfileViewController: UIViewController {
         }
         
         infoButton.snp.makeConstraints { make in
-            make.top.equalTo(view.safeAreaLayoutGuide.snp.top)
+            
             make.centerX.equalToSuperview()
-            make.width.equalToSuperview().multipliedBy(0.5)
+            make.centerY.equalToSuperview().offset(-50)
+            make.width.equalToSuperview().multipliedBy(0.8)
         }
         
         ordersButton.snp.makeConstraints { make in
-            make.top.equalTo(infoButton.snp.bottom).offset(10)
+            make.top.equalTo(infoButton.snp.bottom).offset(20)
             make.centerX.equalToSuperview()
-            make.width.equalToSuperview().multipliedBy(0.5)
+            make.width.equalToSuperview().multipliedBy(0.8)
         }
         
         logOutButton.snp.makeConstraints { make in
