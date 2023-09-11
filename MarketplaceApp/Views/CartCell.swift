@@ -18,6 +18,8 @@ class CartCell: UITableViewCell {
     
     private let nameLabel = UILabel()
     
+    private let sizeLabel = UILabel()
+    
     private let priceLabel = UILabel()
     
     private let removeButton = UIButton()
@@ -37,12 +39,22 @@ class CartCell: UITableViewCell {
     }
     
     func setup() {
+        setupSizeLabel()
         setupNameLabel()
         setupImageView()
         setupPriceLabel()
         setupPriceLabel()
         setupRemoveButton()
         setupConstraints()
+    }
+    
+    private func setupSizeLabel() {
+        
+        addSubview(sizeLabel)
+        sizeLabel.text = product?.size ?? "123123123"
+        sizeLabel.font = UIFont(name: "Georgia-Bold", size: 17)
+        sizeLabel.textColor = .black
+        sizeLabel.numberOfLines = 0
     }
     
     private func setupImageView() {
@@ -64,9 +76,9 @@ class CartCell: UITableViewCell {
     private func setupNameLabel() {
         addSubview(nameLabel)
         nameLabel.text = product?.name
-        priceLabel.font = UIFont(name: "Georgia-Bold", size: 17)
-        priceLabel.textColor = .black
-        priceLabel.numberOfLines = 0
+        nameLabel.font = UIFont(name: "Georgia-Bold", size: 17)
+        nameLabel.textColor = .black
+        nameLabel.numberOfLines = 0
     }
     
     private func setupPriceLabel() {
@@ -107,6 +119,11 @@ class CartCell: UITableViewCell {
             make.top.equalToSuperview().offset(10)
             make.leading.equalTo(image.snp.trailing).offset(10)
             
+        }
+        
+        sizeLabel.snp.makeConstraints { make in
+            make.centerY.equalToSuperview()
+            make.leading.equalTo(image.snp.trailing).offset(10)
         }
         
         priceLabel.snp.makeConstraints { make in
