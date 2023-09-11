@@ -34,7 +34,7 @@ class ProductViewController: UIViewController{
     override func viewDidLoad() {
         
         sizesView.delegate = self
-        view.backgroundColor = .white
+        setupNavigationBar()
         setupNameLabel()
         setupCarouselView()
         setupPageView()
@@ -54,6 +54,14 @@ class ProductViewController: UIViewController{
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    private func setupNavigationBar() {
+        view.backgroundColor = .white
+        let backButton = UIBarButtonItem()
+        backButton.title = "Products"
+        backButton.tintColor = .backgroundColor
+        self.navigationController?.navigationBar.topItem?.backBarButtonItem = backButton
     }
     
     private func setupNameLabel() {

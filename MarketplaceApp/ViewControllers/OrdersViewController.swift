@@ -16,8 +16,6 @@ class OrdersViewController: UIViewController {
     
     override func viewDidLoad() {
         
-        view.backgroundColor = .white
-        
         FirebaseManager.shared.fetchOrders { orders in
             if orders != nil {
                 self.orders = orders!
@@ -30,8 +28,14 @@ class OrdersViewController: UIViewController {
     }
     
     private func setupNavigation() {
+        
+        view.backgroundColor = .white
         navigationController?.navigationBar.prefersLargeTitles = true
         title = "My orders"
+        let backButton = UIBarButtonItem()
+        backButton.title = "Profile"
+        backButton.tintColor = .backgroundColor
+        self.navigationController?.navigationBar.topItem?.backBarButtonItem = backButton
     }
     
     private func setupTableView() {

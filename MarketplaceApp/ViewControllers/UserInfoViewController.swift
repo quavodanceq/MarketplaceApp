@@ -31,7 +31,7 @@ class UserInfoViewController: UIViewController {
     private let saveButton = UIButton()
     
     override func viewDidLoad() {
-        view.backgroundColor = .white
+        setupNavigationBar()
         setupNameLabel()
         setupNameTextField()
         setupCityLabel()
@@ -42,6 +42,15 @@ class UserInfoViewController: UIViewController {
         setupHomeNumberTextField()
         setupSaveButton()
         setupConstraints()
+    }
+    
+    private func setupNavigationBar() {
+        
+        view.backgroundColor = .white
+        let backButton = UIBarButtonItem()
+        backButton.title = "Profile"
+        backButton.tintColor = .backgroundColor
+        self.navigationController?.navigationBar.topItem?.backBarButtonItem = backButton
     }
     
     private func setupSaveButton() {

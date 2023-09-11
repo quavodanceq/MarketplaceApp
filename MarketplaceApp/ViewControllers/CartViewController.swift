@@ -12,6 +12,8 @@ import SnapKit
 
 class CartViewController: UIViewController {
     
+    private let alertController = UIAlertController()
+    
     private var cart = [Product]()
     
     private let tableView = UITableView()
@@ -98,25 +100,28 @@ class CartViewController: UIViewController {
         let alertController = UIAlertController()
     
         guard CartManager.shared.checkUserInfo() else {
-            alertController.title = "Something went wrong"
-            alertController.message = "Provide all information to make order"
-            let action = UIAlertAction(title: "Ok", style: .default)
-            alertController.addAction(action)
-            self.present(alertController, animated: true)
+            presentAlertController(title: "Something went wrong", message: "Provide all information to make order")
             return }
         
         guard AuthManager.shared.isUsedLoggedIn() else {
-            alertController.title = "Something went wrong"
-            alertController.message = "You need to log in to make order"
-            let action = UIAlertAction(title: "Ok", style: .default)
-            alertController.addAction(action)
-            self.present(alertController, animated: true)
+            presentAlertController(title: "Something went wrong", message: "You need to log in to make order")
             return
         }
         
         FirebaseManager.shared.addOrderToFirebase(cart: cart)
         
         CartManager.shared.removeCart()
+        
+        presentAlertController(title: "Success", message: "Order created succesfully")
+    }
+    
+    private func presentAlertController(title: String, message: String) {
+        
+        alertController.title = title
+        alertController.message = message
+        let action = UIAlertAction(title: "Ok", style: .default)
+        alertController.addAction(action)
+        self.present(alertController, animated: true)
     }
     
     private func setupConstraints() {
