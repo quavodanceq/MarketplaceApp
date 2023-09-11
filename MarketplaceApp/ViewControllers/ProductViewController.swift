@@ -165,7 +165,9 @@ class ProductViewController: UIViewController{
         
     }
     
-    @objc private func cartButtonTapped() {
+    @objc private func cartButtonTapped(_ sender: UIButton) {
+        sender.pulsate()
+        sender.flash()
         if productSize != nil {
             product.size = productSize
             CartManager.shared.addToCart(product)

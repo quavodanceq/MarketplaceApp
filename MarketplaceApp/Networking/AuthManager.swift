@@ -13,6 +13,8 @@ import UIKit
 
 class AuthManager {
     
+    private init () {}
+    
     static let shared = AuthManager()
     
     func login(viewController : UIViewController, completion: @escaping (LoginResult) -> Void) {

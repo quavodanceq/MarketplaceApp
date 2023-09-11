@@ -89,7 +89,11 @@ class CartViewController: UIViewController {
         makeOrderButton.addTarget(self, action: #selector(makeOrderButtonTapped), for: .touchUpInside)
     }
     
-    @objc private func makeOrderButtonTapped() {
+    @objc private func makeOrderButtonTapped(_ sender: UIButton) {
+        
+        sender.pulsate()
+        
+        sender.flash()
         
         let alertController = UIAlertController()
     
@@ -111,6 +115,8 @@ class CartViewController: UIViewController {
         }
         
         FirebaseManager.shared.addOrderToFirebase(cart: cart)
+        
+        CartManager.shared.removeCart()
     }
     
     private func setupConstraints() {

@@ -20,12 +20,33 @@ class ProfileViewController: UIViewController {
     
     private let ordersButton = UIButton()
     
+    private let logOutButton = UIButton()
+    
     override func viewDidLoad() {
         view.backgroundColor = .white
         setupLoginButton()
         setupInfoButton()
         setupOrdersButton()
+        setupLogOutButton()
         setupConstaints()
+        if AuthManager.shared.isUsedLoggedIn() {
+            
+                self.loginButton.isHidden = true
+                self.infoButton.isHidden = false
+                self.ordersButton.isHidden = false
+                self.logOutButton.isHidden = false
+            
+           
+        } else {
+            
+                self.loginButton.isHidden = false
+                self.infoButton.isHidden = true
+                self.ordersButton.isHidden = true
+                self.logOutButton.isHidden = true
+            
+            
+        }
+        
     }
     
 
@@ -34,6 +55,15 @@ class ProfileViewController: UIViewController {
         
         loginButton.addTarget(self, action: #selector(loginButtonTapped), for: .touchUpInside)
         view.addSubview(loginButton)
+    }
+    
+    private func setupLogOutButton() {
+        
+        view.addSubview(logOutButton)
+        logOutButton.setTitleColor(.white, for: .normal)
+        logOutButton.addTarget(self, action: #selector(logOutButtonTapped), for: .touchUpInside)
+        logOutButton.setTitle("Log out", for: .normal)
+        logOutButton.backgroundColor = .backgroundColor
     }
     
     private func setupOrdersButton() {
@@ -87,29 +117,57 @@ class ProfileViewController: UIViewController {
             make.width.equalToSuperview().multipliedBy(0.5)
         }
         
+        logOutButton.snp.makeConstraints { make in
+            make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom).offset(-10)
+            make.width.equalToSuperview().multipliedBy(0.5)
+            make.centerX.equalToSuperview()
+        }
+        
         
     }
     
-    @objc private func loginButtonTapped() {
+    @objc private func loginButtonTapped(_ sender: UIButton) {
+        
+        sender.pulsate()
+        
+        sender.flash()
         
         AuthManager.shared.login(viewController: self) { result in
             switch result {
             case .success:
-                print("success")
+                self.viewDidLoad()
             case .failure:
-                print("failure")
+                print("failed to log in")
             }
         }
     }
     
-    @objc private func ordersButtonTapped() {
+    @objc private func ordersButtonTapped(_ sender: UIButton) {
+        
+        sender.pulsate()
+        
+        sender.flash()
         
         self.navigationController?.pushViewController(OrdersViewController(), animated: true)
     }
     
-    @objc private func infoButtonTapped() {
+    @objc private func infoButtonTapped(_ sender: UIButton) {
+        
+        sender.pulsate()
+        
+        sender.flash()
         
         navigationController?.pushViewController(UserInfoViewController(), animated: true)
+    }
+    
+    @objc private func logOutButtonTapped(_ sender: UIButton) {
+        
+        sender.pulsate()
+        
+        sender.flash()
+        
+        AuthManager.shared.logOut()
+        viewDidLoad()
     }
     
 }
