@@ -68,7 +68,7 @@ class ProductViewController: UIViewController{
         
         view.addSubview(nameLabel)
         nameLabel.text = product.name
-        nameLabel.font = UIFont(name: "Georgia-Bold", size: 22)
+        nameLabel.font = UIFont(name: "Copperplate-Bold", size: 23)
         nameLabel.textColor = .black
         nameLabel.numberOfLines = 0
         nameLabel.textAlignment = .center
@@ -78,6 +78,8 @@ class ProductViewController: UIViewController{
     private func setupPageView() {
         
         view.addSubview(pageView)
+        pageView.currentPageIndicatorTintColor = .backgroundColor
+        pageView.pageIndicatorTintColor = .white
         pageView.numberOfPages = product.imagesNames.count
         pageView.currentPage = 0
         pageView.hidesForSinglePage = true
@@ -88,9 +90,10 @@ class ProductViewController: UIViewController{
         view.addSubview(priceLabel)
         priceLabel.text = "\(product.price)$"
         priceLabel.textColor = .white
-        priceLabel.font = UIFont(name: "Georgia-Bold", size: 17)
+        priceLabel.font = UIFont(name: "Copperplate-Bold", size: 19)
         priceLabel.backgroundColor = .backgroundColor
         priceLabel.textAlignment = .center
+        priceLabel.sizeToFit()
     }
     
     private func setupCarouselView() {
@@ -120,7 +123,9 @@ class ProductViewController: UIViewController{
         cartButton.setTitle("Add to cart", for: .normal)
         cartButton.setTitleColor(.white, for: .normal)
         cartButton.addTarget(self, action: #selector(cartButtonTapped), for: .touchUpInside)
-        cartButton.titleLabel?.font = UIFont(name: "Georgia-Bold", size: 17)!
+        cartButton.titleLabel?.font = UIFont(name: "Copperplate-Bold", size: 18)!
+        cartButton.layer.cornerCurve = .continuous
+        cartButton.layer.cornerRadius = 5
     }
     
     private func setupAlert() {
@@ -152,14 +157,14 @@ class ProductViewController: UIViewController{
         }
         
         priceLabel.snp.makeConstraints { make in
-            make.top.equalTo(collectionView.snp.bottom).offset(10)
+            make.top.equalTo(collectionView.snp.bottom).offset(20)
             make.centerX.equalToSuperview()
             make.width.equalToSuperview().multipliedBy(0.2)
             make.height.equalTo(priceLabel.snp.width).multipliedBy(0.4)
         }
         
         sizesView.snp.makeConstraints { make in
-            make.top.equalTo(priceLabel.snp.bottom).offset(10)
+            make.top.equalTo(priceLabel.snp.bottom).offset(20)
             make.centerX.equalToSuperview()
             make.width.equalTo(collectionView.snp.width)
             
@@ -168,7 +173,7 @@ class ProductViewController: UIViewController{
         cartButton.snp.makeConstraints { make in
             make.bottom.equalTo(view.safeAreaLayoutGuide).offset(-10)
             make.centerX.equalToSuperview()
-            make.width.equalTo(collectionView.snp.width).multipliedBy(0.5)
+            make.width.equalTo(collectionView.snp.width).multipliedBy(0.8)
         }
         
     }

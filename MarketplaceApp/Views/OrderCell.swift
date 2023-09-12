@@ -38,7 +38,7 @@ class OrderCell: UITableViewCell {
         
         addSubview(orderLabel)
         orderLabel.text = order?.order
-        orderLabel.font = UIFont(name: "Georgia-Bold", size: 19)
+        orderLabel.font = UIFont(name: "GillSans-SemiBold", size: 19)
         orderLabel.numberOfLines = 0
     }
     
@@ -46,7 +46,8 @@ class OrderCell: UITableViewCell {
         
         addSubview(orderDateLabel)
         orderDateLabel.text = order?.date
-        orderDateLabel.font = UIFont(name: "Georgia-Bold", size: 21)
+        orderDateLabel.font = UIFont(name: "GillSans-SemiBold", size: 19)
+
         orderDateLabel.numberOfLines = 0
     }
     
@@ -54,7 +55,7 @@ class OrderCell: UITableViewCell {
         
         addSubview(orderStatusLabel)
         orderStatusLabel.text = "Order status: \(String(describing: order?.deliveryStatus ?? ""))"
-        orderStatusLabel.font = UIFont(name: "Georgia-Bold", size: 21)
+        orderStatusLabel.font = UIFont(name: "GillSans-SemiBold", size: 21)
         orderStatusLabel.numberOfLines = 0
     }
     
@@ -66,12 +67,12 @@ class OrderCell: UITableViewCell {
         }
         
         orderDateLabel.snp.makeConstraints { make in
-            make.top.equalTo(orderLabel.snp.bottom).offset(20)
+            make.top.equalTo(orderLabel.snp.bottom).offset(5)
             make.leading.equalToSuperview().offset(10)
         }
         
         orderStatusLabel.snp.makeConstraints { make in
-            make.top.equalTo(orderDateLabel.snp.bottom).offset(20)
+            make.top.equalTo(orderDateLabel.snp.bottom).offset(5)
             make.leading.equalToSuperview().offset(10)
             make.bottom.equalToSuperview().offset(-10)
         }

@@ -69,6 +69,7 @@ class ProfileViewController: UIViewController {
     private func setupOrdersButton() {
         
         view.addSubview(ordersButton)
+        ordersButton.titleLabel?.font =  UIFont(name: "Copperplate-Bold", size: 18)!
         ordersButton.setTitle("My orders", for: .normal)
         ordersButton.backgroundColor = .white
         ordersButton.setTitleColor(.backgroundColor, for: .normal)
@@ -84,6 +85,7 @@ class ProfileViewController: UIViewController {
     private func setupInfoButton() {
         
         view.addSubview(infoButton)
+        infoButton.titleLabel?.font =  UIFont(name: "Copperplate-Bold", size: 18)!
         infoButton.setTitle("Private information", for: .normal)
         infoButton.backgroundColor = .white
         infoButton.setTitleColor(.backgroundColor, for: .normal)

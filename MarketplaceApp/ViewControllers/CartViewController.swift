@@ -60,11 +60,7 @@ class CartViewController: UIViewController {
                     self.tabBarItem.badgeValue = String(self.cart.count)
                     self.emptyCartView.isHidden = true
                     self.tableView.isHidden = false
-        
-                    
                 }
-                
-                print(self.cart.count)
             }.store(in: &cancellable)
         
         
@@ -88,7 +84,11 @@ class CartViewController: UIViewController {
         makeOrderButton.setTitle("Make order", for: .normal)
         makeOrderButton.backgroundColor = .backgroundColor
         makeOrderButton.setTitleColor(.white, for: .normal)
+        makeOrderButton.layer.cornerCurve = .continuous
+        makeOrderButton.layer.cornerRadius = 5
         makeOrderButton.addTarget(self, action: #selector(makeOrderButtonTapped), for: .touchUpInside)
+        makeOrderButton.titleLabel?.font =  UIFont(name: "Copperplate-Bold", size: 18)!
+        
     }
     
     @objc private func makeOrderButtonTapped(_ sender: UIButton) {

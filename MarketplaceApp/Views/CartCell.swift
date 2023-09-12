@@ -52,7 +52,7 @@ class CartCell: UITableViewCell {
         
         addSubview(sizeLabel)
         sizeLabel.text = product?.size ?? "123123123"
-        sizeLabel.font = UIFont(name: "Georgia-Bold", size: 17)
+        sizeLabel.font = UIFont(name: "GillSans-SemiBold", size: 19)
         sizeLabel.textColor = .black
         sizeLabel.numberOfLines = 0
     }
@@ -76,7 +76,7 @@ class CartCell: UITableViewCell {
     private func setupNameLabel() {
         addSubview(nameLabel)
         nameLabel.text = product?.name
-        nameLabel.font = UIFont(name: "Georgia-Bold", size: 17)
+        nameLabel.font = UIFont(name: "GillSans-SemiBold", size: 19)
         nameLabel.textColor = .black
         nameLabel.numberOfLines = 0
     }
@@ -86,7 +86,7 @@ class CartCell: UITableViewCell {
         let price = product?.price
         let priceString = "\(price ?? "")$"
         priceLabel.text = priceString
-        priceLabel.font = UIFont(name: "Georgia-Bold", size: 17)
+        priceLabel.font = UIFont(name: "GillSans-SemiBold", size: 19)
         priceLabel.textColor = .black
         priceLabel.numberOfLines = 0
         

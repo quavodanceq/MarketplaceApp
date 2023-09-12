@@ -57,7 +57,7 @@ class ProductCell: UICollectionViewCell {
         
         addSubview(label)
         label.text = product?.name
-        label.font = UIFont(name: "Georgia-Bold", size: 17)
+        label.font = UIFont(name: "GillSans-SemiBold", size: 19)
         label.textColor = .black
         label.numberOfLines = 0
         label.textAlignment = .center
